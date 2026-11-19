@@ -34,9 +34,13 @@ class BusCard {
 
   // TODO 2: topUp
   void topUp(int amount) {
-    if (amount >= 500 && amount <= 50000) {
-      _balance = _balance + amount;
-      print('Topped up $amount RWF');
+    if (amount >= 500) {
+      if (amount <= 50000) {
+        _balance = _balance + amount;
+        print('Topped up $amount RWF');
+      } else {
+        print('Error: top-up must be 500 to 50000 RWF');
+      }
     } else {
       print('Error: top-up must be 500 to 50000 RWF');
     }
